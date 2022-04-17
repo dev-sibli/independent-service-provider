@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
 
@@ -11,10 +12,20 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    let errorLog;
+    if (error) {
+        errorLog = <p className='text-danger'>Error: {error?.message}</p>
+    }
 
     if (user) {
         console.log('user', user);
+    }
+
+    const navigate = useNavigate();
+    const navigateLogin = () => {
+        navigate('/login')
     }
 
     const handleRegister = event => {
@@ -22,35 +33,34 @@ const Register = () => {
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, email, password);
-
         createUserWithEmailAndPassword(email, password);
     }
 
     return (
         <div className='container w-50 mx-auto mt-3'>
-
             <Form onSubmit={handleRegister}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" >
                     <Form.Label>Your Name</Form.Label>
-                    <Form.Control type="text" name="name" placeholder="Enter Your Name" />
+                    <Form.Control type="text" name="name" placeholder="Enter Name" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="mb-3" >
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" placeholder="Enter Email" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Enter Password" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3" >
                     <Form.Check type="checkbox" label="Accept Traveler Terms & Conditions" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button className='w-100 mb-3' variant="primary" type="submit">
                     Register
                 </Button>
             </Form>
-
+            {errorLog}
+            <p>Already have an account?<Link to="/login" className='text-primary text-decoration-none py-auto' onClick={navigateLogin}> Please Login</Link></p>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };
