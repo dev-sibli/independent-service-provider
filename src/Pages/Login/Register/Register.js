@@ -45,11 +45,11 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter Email" />
+                    <Form.Control type="email" name="email" placeholder="Enter Email" required />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Enter Password" />
+                    <Form.Control type="password" name="password" placeholder="Enter Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" >
                     <Form.Check type="checkbox" label="Accept Traveler Terms & Conditions" />

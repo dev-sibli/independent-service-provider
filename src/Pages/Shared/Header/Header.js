@@ -12,8 +12,8 @@ const Header = () => {
         signOut(auth)
     }
     return (
-        <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <div className='mb-4'>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand>
                         <Nav.Link className='text-white' as={Link} to="/">
@@ -23,7 +23,10 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link as={Link} to="service">
+                            <Nav.Link as={Link} to="home">
+                                Home
+                            </Nav.Link>
+                            <Nav.Link href="/home#service">
                                 Services
                             </Nav.Link>
                             <Nav.Link as={Link} to="checkout">
@@ -32,11 +35,12 @@ const Header = () => {
                             <Nav.Link as={Link} to="blogs">
                                 Blogs
                             </Nav.Link>
+
+                        </Nav>
+                        <Nav>
                             <Nav.Link as={Link} to="about">
                                 About
                             </Nav.Link>
-                        </Nav>
-                        <Nav>
                             {
                                 user ?
                                     <button className='btn btn-link text-white text-decoration-none ' onClick={handleSignOut}>sign out</button>

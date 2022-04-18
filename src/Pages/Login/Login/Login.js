@@ -1,12 +1,18 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    let errorLog;
+
     const [
         signInWithEmailAndPassword,
         user,
@@ -14,10 +20,12 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    let errorLog;
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     if (user) {
-        console.log('user', user);
+        navigate(from, { replace: true });
     }
 
     if (error) {
@@ -37,12 +45,12 @@ const Login = () => {
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" >
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Password" required />
                 </Form.Group>
                 <Button className='w-100 mb-3' variant="dark" type="submit">
                     Login
@@ -50,7 +58,6 @@ const Login = () => {
             </Form>
             {errorLog}
             <p>New to Traveler? <Link to="/register" className='text-primary text-decoration-none'>Please Register</Link></p>
-            <p>Forget Password? <button className='btn btn-link text-primary text-decoration-none'>Reset Password</button> </p>
             <SocialLogin></SocialLogin>
         </div>
     );
