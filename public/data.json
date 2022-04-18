@@ -1,23 +1,23 @@
 [
 	{
 		"id": "625b09651043213c25c7008c",
-		"picture": "https://raw.githubusercontent.com/programming-hero-web-course-4/independent-service-provider-dev-sibli/main/src/images/services/kashmir.jpg?token=GHSAT0AAAAAABROH55EKHUR2R3KWEP5GPAYYS3DEQA",
-		"name": "Kashmir",
+		"picture": "https://i.ibb.co/WWCXL5Y/kashmir.jpg",
+		"name": "Fabulous Kashmir Vacation - With Houseboat Stay",
 		"price": 2000,
-		"about": "Consectetur id aliquip consequat ipsum pariatur est et deserunt sunt quis enim. Adipisicing tempor sunt et deserunt. Anim eu labore enim aliquipscsc adsdcssadxasdcasdcxas  afsfc."
+		"about": "Cool off in the mesmerising Betaab Valley, enjoy the breeze by the Dal Lake & more. Book holiday packages with complimentary inclusions like excursions."
 	},
 	{
 		"id": "625b0965d5a77019499c71f3",
-		"picture": "https://raw.githubusercontent.com/programming-hero-web-course-4/independent-service-provider-dev-sibli/main/src/images/services/everest.jpg?token=GHSAT0AAAAAABROH55FPW4NI2VN2PVQJWAUYS3DE4Q",
-		"name": "Mount Everest",
+		"picture": "https://i.ibb.co/J5Ctv9W/everest.jpg",
+		"name": "Adventurous and thrilling Everest Base Camp Trek",
 		"price": 4000,
-		"about": "Aliqua veniam esse officia mollit sunt occaecat adipisicing id deserunt qui irure cupidatat non esse. Sint Lorem voluptate consequat cupidatat exercitation dolor excepteur ea magna."
+		"about": "adventurous and thrilling Everest Base Camp Trek 12 days package with an assurity to deliver the best journey in the Himalayas. you will enjoy every second your trip with us without having any problems. "
 	},
 	{
 		"id": "625b0965989c82ebc73b311d",
-		"picture": "https://raw.githubusercontent.com/programming-hero-web-course-4/independent-service-provider-dev-sibli/main/src/images/services/seabeach.jpg?token=GHSAT0AAAAAABROH55EOCAM4ZWFDT3CS5U4YS3DFEA",
-		"name": "GOA Sea Beach",
+		"picture": "https://i.ibb.co/wLqmt5D/seabeach.jpg",
+		"name": "Exotic holiday in GOA Sea Beach",
 		"price": 2500,
-		"about": "Nisi nostrud in aliquip laborum in pariatur. Fugiat sunt sint duis est reprehenderit et voluptate ad. In exercitation est reprehenderit cupidatat ex cillum commodo aliqua sunt."
+		"about": "Goa holidays will be full of memories that last a lifetime. Every aspect of your trip to Goa is carefully chalked out considering the unique requirements, diverse interests and budget of every individual. "
 	}
 ]

@@ -54,7 +54,7 @@ const Register = () => {
                 <Form.Group className="mb-3" >
                     <Form.Check type="checkbox" label="Accept Traveler Terms & Conditions" />
                 </Form.Group>
-                <Button className='w-100 mb-3' variant="primary" type="submit">
+                <Button className='w-100 mb-3' variant="dark" type="submit">
                     Register
                 </Button>
             </Form>

@@ -44,13 +44,13 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Password" />
                 </Form.Group>
-                <Button className='w-100 mb-3' variant="primary" type="submit">
+                <Button className='w-100 mb-3' variant="dark" type="submit">
                     Login
                 </Button>
             </Form>
             {errorLog}
             <p>New to Traveler? <Link to="/register" className='text-primary text-decoration-none'>Please Register</Link></p>
-            <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none'>Reset Password</button> </p>
+            <p>Forget Password? <button className='btn btn-link text-primary text-decoration-none'>Reset Password</button> </p>
             <SocialLogin></SocialLogin>
         </div>
     );
