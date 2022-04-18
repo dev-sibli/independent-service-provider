@@ -18,9 +18,9 @@ const Register = () => {
     if (error) {
         errorLog = <p className='text-danger'>Error: {error?.message}</p>
     }
-
+    let verification;
     if (user) {
-        console.log('user', user);
+        verification = <p className='text-info'>Info: Verification Mail Sent</p>
     }
 
     const navigate = useNavigate();
@@ -59,6 +59,7 @@ const Register = () => {
                 </Button>
             </Form>
             {errorLog}
+            {verification}
             <p>Already have an account?<Link to="/login" className='text-primary text-decoration-none py-auto' onClick={navigateLogin}> Please Login</Link></p>
             <SocialLogin></SocialLogin>
         </div>
