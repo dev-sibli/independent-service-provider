@@ -11,8 +11,8 @@ const Service = (props) => {
         navigate(`/checkout/${id}`)
     }
     return (
-        <div className='col-lg-4'>
-            <Card className='my-2'>
+        <div className='col-lg-4 '>
+            <Card className='my-2 '>
                 <Card.Img className='w-100' variant="top" src={picture} />
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>

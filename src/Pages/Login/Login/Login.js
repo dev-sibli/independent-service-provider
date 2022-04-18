@@ -23,7 +23,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
 
     if (loading) {
         return <Loading></Loading>
@@ -48,7 +48,6 @@ const Login = () => {
     const resetPassword = async () => {
         const email = emailRef.current.value;
         if (email) {
-            console.log(email);
             await sendPasswordResetEmail(email);
             toast('Sent email');
         }
@@ -58,7 +57,7 @@ const Login = () => {
     }
 
     return (
-        <div className='container w-50 mx-auto mt-3'>
+        <div className='container w-50 w-lg-25 mx-auto mt-3'>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Email address</Form.Label>
