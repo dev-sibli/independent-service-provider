@@ -4,7 +4,7 @@ Live Website: https://traveler-847be.web.app/
 
 ## Features
 
-- Slider on Some beautiful tourist spot
+- Slider banner on Homepage
 - Various tour Packages
 - Tour Booking service
 - Login Authentication added (Email-Password & Google Sign In method implemented)
